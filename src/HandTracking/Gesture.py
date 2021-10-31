@@ -1,12 +1,12 @@
 import cv2
-import mediapipe as mp
 import numpy as np
 import time
-from Module import HandDetector
 import math
 from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
+
+from Module import HandDetector
 
 width_cam, height_cam = 1280, 720
 
@@ -52,7 +52,7 @@ while cap.isOpened():
         length = math.hypot(x2 - x1, y2 - y1)
         # print(length)
 
-        vol = np.interp(length, [15, 250], [min_volume, max_volume])
+        vol = np.interp(length, [15, 300], [min_volume, max_volume])
         # vol_bar = np.interp(length, [15, 250], [400, 150])
         # vol_per = np.interp(length, [15, 250], [0, 100])
 
